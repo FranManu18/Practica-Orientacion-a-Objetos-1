@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: ar.edu.unlp.objectos.uno.ejercicio6_GenealogiaSalvaje.MamiferoTest
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.224 s <<< FAILURE! - in ar.edu.unlp.objectos.uno.ejercicio6_GenealogiaSalvaje.MamiferoTest
+testTieneComoAncestroA  Time elapsed: 0.015 s  <<< ERROR!
+java.lang.NullPointerException
+	at ar.edu.unlp.objectos.uno.ejercicio6_GenealogiaSalvaje.MamiferoTest.testTieneComoAncestroA(MamiferoTest.java:98)
+
+testTieneComoAncestroAsimetrico  Time elapsed: 0.009 s  <<< ERROR!
+java.lang.NullPointerException
+	at ar.edu.unlp.objectos.uno.ejercicio6_GenealogiaSalvaje.MamiferoTest.testTieneComoAncestroAsimetrico(MamiferoTest.java:122)
+

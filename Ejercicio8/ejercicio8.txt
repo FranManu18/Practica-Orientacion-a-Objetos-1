@@ -1,0 +1,14 @@
+1)Codigo 1:
+	1)Aportes de clase Gerente
+	2)MontoBasico de clase Gerente
+
+
+	Codigo 2:
+	1)SueldoBasico de EmpleadoJerarquico
+	2)SueldoBasico de Empleado
+	3)montoBasico de Empleado
+	4)aportes de Empleado
+	5)BonoPorCategoria de EmpleadoJerarquico
+
+2)	aportesDeAlan: 2850
+	sueldoBasicoDeAlan: 56500
