@@ -6,9 +6,9 @@ public class Carpeta {
 	private String nombre;
 	private List<Email> emails;
 	
-	public Carpeta(String nombre) {
+	public Carpeta(String nombre,List<Email>emails) {
 		this.nombre = nombre;
-		this.emails=new LinkedList();//*
+		this.emails=emails;//*
 	}
 
 	public String getNombre() {

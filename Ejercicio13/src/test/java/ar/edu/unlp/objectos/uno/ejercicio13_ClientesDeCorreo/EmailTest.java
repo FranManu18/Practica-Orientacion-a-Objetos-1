@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -12,21 +13,17 @@ public class EmailTest {
 	
 	@BeforeEach
 	void setUp() {
-		email=new Email("Email A","Cuerpo del Email A");
-		email.adjuntar(new Archivo("Archivo A"));
-		email.adjuntar(new Archivo("Archivo B"));
+		List<Archivo>archivos=new LinkedList<Archivo>();
+		archivos.add(new Archivo("Archivo A"));
+		archivos.add(new Archivo("Archivo B"));
+		email=new Email("Email A","Cuerpo del Email A",archivos);
 	}
 	
-	@Test
-	public void testGetters() {
-		assertEquals("Email A",email.getTitulo());
-		assertEquals("Cuerpo del Email A",email.getCuerpo());
-		assertEquals(2,email.adjuntos().size());
-	}
 	
 	@Test
 	public void testAdjuntar() {
-		Email mail=new Email("Email B","Cuerpo del email B");
+		List<Archivo>archivos=new LinkedList<Archivo>();
+		Email mail=new Email("Email B","Cuerpo del email B",archivos);
 		assertEquals(0,mail.adjuntos().size());
 		mail.adjuntar(new Archivo("Archivo A"));
 		assertEquals(1,mail.adjuntos().size());

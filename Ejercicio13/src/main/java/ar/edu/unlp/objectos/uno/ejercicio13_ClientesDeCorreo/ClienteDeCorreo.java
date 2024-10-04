@@ -9,11 +9,13 @@ public class ClienteDeCorreo {
 	private Carpeta Inbox;
 	private List<Carpeta> carpetas;
 
-	public ClienteDeCorreo() {
-		this.carpetas=new LinkedList<Carpeta>();
-		this.Inbox=new Carpeta("inbox");
-	}
 	
+	public ClienteDeCorreo(Carpeta inbox, List<Carpeta> carpetas) {
+		super();
+		Inbox = inbox;
+		this.carpetas = carpetas;
+	}
+
 	public void recibir(Email email) {
 		this.Inbox.agregarEmail(email);
 	}

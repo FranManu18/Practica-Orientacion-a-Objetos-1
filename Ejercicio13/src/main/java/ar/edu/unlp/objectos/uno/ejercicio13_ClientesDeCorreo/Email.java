@@ -8,10 +8,10 @@ public class Email {
 	private String cuerpo;
 	private List<Archivo> archivos;
 	
-	public Email(String titulo, String cuerpo) {
+	public Email(String titulo, String cuerpo,List<Archivo>archivos) {
 		this.titulo = titulo;
 		this.cuerpo=cuerpo;
-		this.archivos=new LinkedList();
+		this.archivos=archivos;
 	}
 
 	public String getTitulo() {
