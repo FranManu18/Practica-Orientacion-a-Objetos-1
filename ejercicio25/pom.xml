@@ -3,10 +3,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>oo1</groupId>
-  <artifactId>ejercicio25-Veterinaria2</artifactId>
+  <artifactId>ejercicio25-Veterinaria4</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>ejercicio25-Veterinaria2</name>
+  <name>ejercicio25-Veterinaria4</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
