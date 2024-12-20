@@ -3,10 +3,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>oo1</groupId>
-  <artifactId>parcial4-Juego</artifactId>
+  <artifactId>parcial4-juego2</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>parcial4-Juego</name>
+  <name>parcial4-juego2</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

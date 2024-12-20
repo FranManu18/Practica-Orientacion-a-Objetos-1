@@ -1,13 +1,13 @@
-package oo1.parcial4_Juego;
+package oo1.parcial4_juego2;
 
 public class Orco extends Personaje {
 
-	public Orco(String nombre, Rol rol) {
-		super(nombre, 1, 2, rol);
+	public Orco(String nombre,Rol rol) {
+		super(nombre, 1,2, rol);
 	}
 	
 	@Override
-	public double incremento(int valor,int hora) {
+	public double incremento(int hora,int valor) {
 		if(hora<=8 && hora>=20) {
 			return valor+valor*0.6;
 		}
@@ -18,6 +18,4 @@ public class Orco extends Personaje {
 	public boolean puedeSubir() {
 		return this.getNivel()%3==0;
 	}
-	
-	
 }

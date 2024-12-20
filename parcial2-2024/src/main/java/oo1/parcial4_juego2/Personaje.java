@@ -1,6 +1,7 @@
-package oo1.parcial4_Juego;
+package oo1.parcial4_juego2;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public abstract class Personaje {
 	private String nombre;
@@ -8,6 +9,7 @@ public abstract class Personaje {
 	private int inteligencia;
 	private int fuerza;
 	private Rol rol;
+	
 	public Personaje(String nombre, int inteligencia, int fuerza, Rol rol) {
 		super();
 		this.nombre = nombre;
@@ -18,9 +20,11 @@ public abstract class Personaje {
 	}
 	
 	
+	
 	public int getNivel() {
 		return nivel;
 	}
+
 
 
 	public int getInteligencia() {
@@ -28,36 +32,37 @@ public abstract class Personaje {
 	}
 
 
+
 	public int getFuerza() {
 		return fuerza;
 	}
 
 
-	public void cambiarRol(Rol rol) {
-		this.rol=rol;
-	}
-	
-	public abstract double incremento(int valor,int hora);
+
+	public abstract double incremento(int hora,int valor);
 	
 	public double poderDeAtaque(int hora) {
-		return incremento(rol.valorBase(this),hora);
+		return incremento(hora,rol.valorBase(this));
+	}
+	
+	public void cambiarRol(Rol rolNuevo) {
+		rol=rolNuevo;
 	}
 	
 	public abstract boolean puedeSubir();
 	
-	public void subirNivel() {
-		if(puedeSubir()) {
-			nivel++;
-			rol.subirHabilidad(this);
-		}
-	}
-	
-	public void sumarInteligencia(int valor) {
+	public void aumentarInteligencia(int valor) {
 		inteligencia+=valor;
 	}
 	
-	public void sumarFuerza(int valor) {
+	public void aumentarFuerza(int valor) {
 		fuerza+=valor;
+	}
+	
+	public void subirNivel() {
+		if(puedeSubir()) {
+			rol.aumentarHabilidad(this);
+		}
 	}
 	
 	public void enfrentar(Personaje p,int hora) {
@@ -72,16 +77,16 @@ public abstract class Personaje {
 	}
 	
 	public boolean mismoNivel(Personaje p) {
-		return p.getNivel()==nivel && p.poderDeAtaque(12)<5;
+		return (nivel==p.getNivel())&& p.poderDeAtaque(12)<5;
 	}
 	
 	public boolean distintoNivel(Personaje p) {
-		return (Math.abs(p.getNivel()-getNivel()))<=2;
+		return (p.getNivel()-getNivel())<=2;
 	}
 	
-	public Personaje BuscarOponente(List<Personaje>oponentes) {
+	public List<Personaje> buscarOponentes(List<Personaje>oponentes) {
 		return oponentes.stream()
 				.filter(personaje->mismoNivel(personaje) || distintoNivel(personaje))
-				.findFirst().orElse(null);
+				.collect(Collectors.toList());
 	}
 }
